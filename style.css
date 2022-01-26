@@ -1,0 +1,158 @@
+:root{
+  --purple-c: #9500B4;
+  --b-white:  #FFFFF1;
+  --white: #f3f3f3;
+  --gr-white: #fafafa;
+  --gh-white:#f8f8ff;
+  --cl-black: #000000;
+  --border-5: 5px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+  text-rendering: optimizeLegibility!important;
+  -webkit-font-smoothing: antialiased !important;
+}
+
+body {
+  background-color: ghostwhite;
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+outline: none;
+}
+
+input{
+  background-color:var(--white);
+  box-shadow: 0px 0px 50px 25px rgba(0, 0, 0, 0.055);
+  border-radius: var(--border);
+  border: solid var(--b-white) 0.04rem;
+  font-size: 1rem;
+  font-weight: 400;
+  height: 60px;
+  letter-spacing: 0.085rem;
+  padding-left: 2rem;
+  transform-origin: 100% 50%;
+  width: 300px;
+}
+
+.center{
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 600px;
+  justify-content: center;
+  width: 100%;
+}
+
+.title {
+  color: var(--purple-c);
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.input-area{
+  align-items: center;
+  display: flex;
+  height: 60px;
+  justify-content: flex-end;
+  width: 300px;
+}
+
+.center, .sch-icon, .search-origin {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.sch-icon, .search-origin{
+  position: absolute;
+}
+
+.sch-icon{
+  border-radius: 0px 5px 5px 0px;
+  cursor: pointer;
+  height: 60px;
+  transform-origin: 100% 50%;
+  width: 70px;
+}
+
+.Arrow{
+  filter: invert(100%);
+  width: 20px;
+}
+
+img{
+  filter: invert(27%) sepia(51%) saturate(1350%) hue-rotate(246deg) brightness(104%) contrast(97%);
+  width: 20px;
+}
+
+.search-origin{
+  background-color: rgba(206, 206, 206, 0.24);
+  height: 60px;
+  width: 70px;
+}
+
+.input-area:hover .lp{
+  opacity: 0%;
+}
+
+.input-area:hover .sch-icon{
+  animation-name: searchanime;
+  animation-duration: 0.2s;
+  animation-timing-function: cubic-bezier(1.755, 0.05, 9.855, 0.06);
+  animation-fill-mode: forwards;
+}
+
+.input-area:not(:hover) .sch-icon{
+  animation-name: searchanime-out;
+  animation-duration: 0.1s;
+  animation-timing-function: cubic-bezier(1.755, 0.05, 9.855, 0.06);
+  animation-fill-mode: forwards;
+}
+
+@keyframes searchanime{
+  0%{
+    background-color: var(--purple-c);
+    border-radius: 200px 0px 0px 30px;
+    transform: scaleX(0);
+  }
+  
+  100%{
+    background-color: var(--purple-c);
+    transform: scaleX(1);
+
+  }
+}
+
+@keyframes searchanime-out{
+  0%{
+    background-color: var(--purple-c);
+    transform: scaleX(1);
+  }
+  
+  100%{
+    background-color: var(--purple-c);
+    border-radius: 100px 0px 0px 200px;
+    transform: scaleX(0);
+
+  }
+}
